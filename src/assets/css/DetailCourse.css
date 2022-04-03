@@ -71,7 +71,7 @@
 }
 .additional-detail h3 {
   font-size: 1.5rem;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.3px;
   font-weight: 500;
   line-height: 1.7;
 }
@@ -101,7 +101,14 @@
   letter-spacing: 0.6px;
   text-transform: uppercase;
   margin: 0 1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }
+.detail-CTA button:hover,
+.detail-CTA button:active{
+  transform: scale(.97, .97);
+}
+
 @media screen and (min-width: 420px) {
   .detail-CTA button {
     width: 150px;

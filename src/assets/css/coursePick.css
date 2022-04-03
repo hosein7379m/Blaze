@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-bottom: 1.5rem;
 }
 .about-header {
   display: flex;
@@ -47,18 +48,19 @@
 }
 .courses-list h2 {
   font-family: "Montserrat", sans-serif;
+  font-size: 1.7rem;
   padding: 2rem 0;
 }
 .footer-singleCourse {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 49.3%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 95.7%;
   height: 50px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 10px -2px 10px -6px rgba(0, 0, 0, 0.72);
+  box-shadow: 0px -2px 8px -6px rgba(0, 0, 0, 0.72);
   display: flex;
   align-items: center;
   justify-content: center;

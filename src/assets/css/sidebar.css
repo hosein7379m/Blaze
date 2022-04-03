@@ -108,7 +108,7 @@
   width: 100%;
   position: relative;
   transform: translateX(-50%);
-  bottom: 0.5%;
+  bottom: 5%;
   left: 50%;
   display: flex;
   flex-direction: column;

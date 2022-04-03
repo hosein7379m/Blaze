@@ -62,8 +62,8 @@ const DetailCourse = () => {
       </div>
       <div className="detail-CTA">
         <div>
-          <button>BACK</button>
-          <button>ADD</button>
+          <button className="cta-back">BACK</button>
+          <button className="cta-add">ADD</button>
         </div>
       </div>
     </div>

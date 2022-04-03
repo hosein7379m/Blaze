@@ -175,12 +175,12 @@ const Register = (props) => {
             style={{
               backgroundColor: "#5e81f4",
               margin: ".5rem 0",
-              width: "150px",
+              width: "200px",
               height: ".5px",
             }}
           />
           <div className="signUp-way">
-            <p>{isSignUp ? "Login with: " : "Sign up with: "}</p>
+            <p>{isSignUp ? "Login with : " : "Sign up with : "}</p>
             <i className="fa-brands fa-google-plus-g"></i>
             <i className="fa-brands fa-github"></i>
           </div>
