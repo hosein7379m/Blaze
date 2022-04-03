@@ -32,7 +32,7 @@ export default {
       .then((data) => data);
   },
   isAuthenticated: () => {
-    return fetch("/user/authenticated").then((res) => {
+    return fetch("https://serverblaze.herokuapp.com/user/authenticated").then((res) => {
       if (res.status !== 401) {
         return res.json().then((data) => data);
       } else {
