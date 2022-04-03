@@ -24,13 +24,16 @@ export default {
     });
   },
   deleteCourse: (courseDel) => {
-    return fetch(`https://serverblaze.herokuapp.com/usercourse/delete/${courseDel}`, {
-      method: "DELETE",
-      body: JSON.stringify(courseDel),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => {
+    return fetch(
+      `https://serverblaze.herokuapp.com/usercourse/delete/${courseDel}`,
+      {
+        method: "DELETE",
+        body: JSON.stringify(courseDel),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => {
       return res.json().then((data) => data);
     });
   },

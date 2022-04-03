@@ -85,7 +85,7 @@ const Register = (props) => {
       AuthService.login(login).then((data) => {
         const { isAuthenticated, user, message } = data;
         if (isAuthenticated) {
-          toast.success(message.msgBody);
+          toast.success(message);
           authContext.setUser(user);
           authContext.setIsAuthenticated(isAuthenticated);
           setTimeout(() => {

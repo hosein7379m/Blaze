@@ -39,6 +39,7 @@ export default ({ children }) => {
         setSelectedCourses(data);
       });
     }
+
     return () => {
       isDone = false;
     };
