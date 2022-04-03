@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
+.register {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: start;
+  font-family: "Montserrat", sans-serif;
+  overflow-y: auto;
+}
+.form-container {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0 2.5rem 0;
+  background-color: #dce3fc;
+  position: relative;
+  overflow-y: auto;
+}
+.signup-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signupOn {
+  position: absolute;
+  transform: translate(-50%, -13%);
+  left: -2000px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.signupOff {
+  left: 50%;
+  transition: all 1.8s ease-in-out;
+}
+.form-title {
+  font-size: 2rem;
+  padding: 1.5rem;
+  color: rgb(71, 65, 65);
+}
+.fName-signUp,
+.lName-signUp,
+.username-signUp,
+.password-signUp,
+.username-login,
+.password-login {
+  border: 2px solid #5e81f4;
+  width: 220px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+.fName-signUp i,
+.lName-signUp i,
+.username-signUp i,
+.password-signUp i,
+.username-login i,
+.password-login i {
+  color: dimgray;
+  font-size: 1.1rem;
+  color: rgb(184, 180, 180);
+}
+.fName-signUp input,
+.lName-signUp input,
+.username-signUp input,
+.password-signUp input,
+.username-login input,
+.password-login input {
+  border: none;
+  background: none;
+  outline: none;
+  height: 40px;
+  letter-spacing: 0.08rem;
+  font-family: Verdana;
+}
+.fName-signUp input::placeholder,
+.lName-signUp input::placeholder,
+.username-signUp input::placeholder,
+.password-signUp input::placeholder,
+.username-login input::placeholder,
+.password-login input::placeholder {
+  font-size: 1.2rem;
+}
+.form-btn {
+  width: 110px;
+  height: 35px;
+  border: 1px solid #0535d4;
+  color: white;
+  background-color: #5e81f4;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-size: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.form-btn:focus {
+  opacity: 0.5;
+}
+.signUp-way {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 130px;
+}
+.fa-google-plus-g,
+.fa-github {
+  font-size: 1.8rem;
+  color: #3c66f3;
+  cursor: pointer;
+}
+.login-form {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginOff {
+  left: 50%;
+  transition: all 1.8s ease-in-out;
+}
+.loginOn {
+  position: absolute;
+  transform: translate(-50%, -13%);
+  left: -2000px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.switch-container {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0.5rem;
+  background-image: linear-gradient(
+    to bottom,
+    #6586f4,
+    #7b97f6,
+    #91a8f7,
+    #a6b8f7,
+    #dce3fc
+  );
+}
+.switch-brand {
+  font-size: 2.9rem;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Tangerine", cursive;
+  padding: 1rem 0 2.8rem 0;
+}
+.switch h2 {
+  font-size: 1.7rem;
+  padding: 0.5rem 0;
+  color: dimgray;
+  letter-spacing: 1px;
+}
+.switch h5 {
+  font-size: 1.22rem;
+  padding: 1rem 1.5rem;
+  color: dimgray;
+  word-wrap: break-word;
+  letter-spacing: 1px;
+}
+.switch p {
+  font-size: 1.08rem;
+  padding: 0.5rem;
+  color: rgb(82, 76, 76);
+  letter-spacing: 1px;
+  font-weight: 600;
+  /* transition: all 1s ease-in; */
+}
+.switch button {
+  width: 90px;
+  height: 30px;
+  border: 3px solid #5e81f4;
+  border-radius: 20px;
+  background: none;
+  font-weight: 700;
+  color: rgb(46, 44, 44);
+  cursor: pointer;
+  /* transition: all 0.5s ease-in; */
+}
+.switch button:active {
+  opacity: 0.5;
+}
+/* .switch-btn:active{
+  animation-name: switchAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+} */
+@keyframes switchAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 720px) {
+  .register {
+    flex-direction: row-reverse;
+  }
+  .form-container {
+    height: 100%;
+  }
+  .signup-form {
+    transform: translateY(30%);
+  }
+  .signupOn {
+    position: absolute;
+    transform: translate(-50%, -30%);
+    left: -2000px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .signupOff {
+    left: 50%;
+    transition: all 1.8s ease-in-out;
+  }
+  .login-form {
+    transform: translateY(60%);
+  }
+  .loginOff {
+    left: 50%;
+    transition: all 1.8s ease-in-out;
+  }
+  .loginOn {
+    position: absolute;
+    transform: translate(-50%, -30%);
+    left: -2000px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .form-title {
+    font-size: 2.1rem;
+  }
+  .fName-signUp,
+  .lName-signUp,
+  .username-signUp,
+  .password-signUp,
+  .username-login,
+  .password-login {
+    width: 280px;
+    height: 45px;
+  }
+  .fName-signUp i,
+  .lName-signUp i,
+  .username-signUp i,
+  .password-signUp i,
+  .username-login i,
+  .password-login i {
+    font-size: 1.5rem;
+  }
+  .fName-signUp input,
+  .lName-signUp input,
+  .username-signUp input,
+  .password-signUp input,
+  .username-login input,
+  .password-login input {
+    height: 45px;
+    width: 230px;
+  }
+  .form-btn {
+    width: 140px;
+    height: 40px;
+    font-size: 1.7rem;
+  }
+  .signUp-way {
+    width: 150px;
+  }
+  .signUp-way p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: dimgray;
+  }
+  .fa-google-plus-g,
+  .fa-github {
+    font-size: 2rem;
+  }
+  .switch-container {
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      #6586f4,
+      #7b97f6,
+      #96adf7,
+      #b2c0f1,
+      #dce3fc
+    );
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .switch-brand {
+    font-size: 4.5rem;
+  }
+  .switch h2 {
+    font-size: 1.8rem;
+  }
+  .switch h5 {
+    font-size: 1.33rem;
+  }
+  .switch p {
+    font-size: 1.1rem;
+    color: rgb(58, 54, 54);
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+  .switch button {
+    width: 120px;
+    height: 35px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .fName-signUp,
+  .lName-signUp,
+  .username-signUp,
+  .password-signUp,
+  .username-login,
+  .password-login {
+    width: 330px;
+    height: 50px;
+  }
+  .fName-signUp input,
+  .lName-signUp input,
+  .username-signUp input,
+  .password-signUp input,
+  .username-login input,
+  .password-login input {
+    height: 50px;
+    width: 270px;
+  }
+  .form-btn {
+    width: 150px;
+    height: 40px;
+    font-size: 1.7rem;
+  }
+  .switch-brand {
+    font-size: 5rem;
+  }
+  .switch h5 {
+    padding: 2rem 5rem;
+  }
+  .switch button {
+    width: 130px;
+    height: 40px;
+    font-size: 1.7rem;
+  }
+}
+/********************** owner info style *************************/
+.OwnerInfo {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Verdana;
+}
+.OwnerInfo p {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: rgb(171, 122, 218);
+}
+.OwnerInfo a {
+  color: rgb(144, 68, 216);
+  font-weight: 600;
+}

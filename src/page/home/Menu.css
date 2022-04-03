@@ -1,0 +1,46 @@
+.Menu {
+  width: 90%;
+  height: 3rem;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    #bac9fb,
+    #c7d3fc,
+    #d4ddfd,
+    #e1e8fe,
+    #eef2ff
+  );
+  margin-left: 5%;
+  border-radius: 100% 100% 0 0;
+  transition: all 0.5s ease-in-out;
+}
+.menuOp {
+  height: 40rem;
+  border-radius: 35% 35% 0 0;
+}
+.uil-apps {
+  font-size: 3rem;
+  background-color: #5e81f4;
+  color: #fff;
+  padding: 0.5rem 0.6rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.uil-apps:hover,
+.uil-apps:active {
+  background-color: #fff;
+  color: #5e81f4;
+  border: 1px solid #5e81f4;
+}
+.menu-handler {
+  position: relative;
+  transform: translateX(-50%);
+  left: 45%;
+  top: -15px;
+  width: 45px;
+  height: 45px;
+}

@@ -1,0 +1,115 @@
+.error-alert {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.21);
+}
+.main-course {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+.courseList {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.about-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, 0.72);
+  z-index: 5;
+}
+.fa-bars {
+  font-size: 3.3rem;
+  color: #5e81f4;
+  cursor: pointer;
+  transition: 0.15s all ease-in;
+}
+.fa-bars:hover {
+  transform: scale(0.8, 0.8);
+}
+.blaze-logo h1 {
+  color: #5e81f4;
+  font-size: 3.8rem;
+  font-weight: bolder;
+  font-style: italic;
+  font-family: "Tangerine", cursive;
+}
+.courses-list {
+  padding: 2%;
+  overflow-y: auto;
+}
+.courses-list h2 {
+  font-family: "Montserrat", sans-serif;
+  padding: 2rem 0;
+}
+.footer-singleCourse {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 10px -2px 10px -6px rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-singleCourse button {
+  font-family: "Montserrat", sans-serif;
+  width: 200px;
+  height: 40px;
+  background-color: #5e81f4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.footer-singleCourse button:hover,
+.footer-singleCourse button:active {
+  transform: scale(0.97, 0.97);
+  border: 3px solid #5e81f4;
+  color: #5e81f4;
+  background-color: white;
+}
+
+@media screen and (min-width: 700px) {
+  .courseList {
+    width: 70%;
+  }
+  .about-header {
+    box-shadow: 10px 1px 10px -6px rgba(0, 0, 0, 0.72);
+    padding: 1rem 2rem;
+  }
+  .blaze-logo h1 {
+    font-size: 4rem;
+  }
+  .fa-bars {
+    display: none;
+  }
+}
+@media screen and (min-width: 900px) {
+  .courseList {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .courseList {
+    width: 80%;
+  }
+  .about-header {
+    padding: 1.5rem 3rem;
+  }
+}

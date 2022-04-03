@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect, useState } from "react";
+import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
+import Register from "./page/Register";
+import { AuthContext } from "./Context/AuthContext";
+import CoursePick from "./page/CoursePick";
+import DetailCourse from "./page/DetailCourse";
+import Home from "./page/home/Home";
 
 function App() {
+  const {
+    user,
+    setUser,
+    isAuthenticated,
+    setIsAuthenticated,
+    courses,
+    userCourse,
+    setUserCourse,
+    detailCourseId,
+    setDetailCourseeId,
+    selectedCourses,
+    setSelectedCourses,
+  } = useContext(AuthContext);
+  //console.log(selectedCourses);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Register />}></Route>
+        <Route path="course" element={<CoursePick />}></Route>
+        <Route path="detail" element={<DetailCourse />}></Route>
+        <Route path="home" element={<Home />}></Route>
+      </Routes>
     </div>
   );
 }

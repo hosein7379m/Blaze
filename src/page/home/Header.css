@@ -1,0 +1,77 @@
+.Header {
+  width: 100%;
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-bottom: 2px solid #dddccc;
+  font-family: "Montserrat", sans-serif;
+}
+.search-bar {
+  background-color: #fff;
+  width: 300px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-bar i {
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgb(131, 125, 125);
+  width: 30px;
+  height: 30px;
+  border-radius: 0 15px 15px 0;
+  padding: 0.75rem 0.6rem;
+  cursor: pointer;
+}
+.search-bar i:hover,
+.search-bar i:active {
+  background-color: #fff;
+  color: #5e81f4;
+}
+.search-bar input {
+  background: none;
+  border: none;
+  outline: none;
+  color: rgb(71, 65, 65);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.8px;
+  padding: 0 0.6rem;
+  width: 100%;
+}
+.search-bar input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.9px;
+  font-weight: 400;
+  color: rgb(71, 65, 65);
+}
+.header-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+.header-cta h1 {
+  color: rgb(71, 65, 65);
+}
+.cta-btn button {
+  background: none;
+  border: none;
+  outline: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(71, 65, 65);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.cta-btn button:hover,
+.cta-btn button:active {
+  background-color: #fff;
+  color: #5e81f4;
+}

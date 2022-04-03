@@ -1,0 +1,149 @@
+.detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+}
+.detail-container {
+  display: flex;
+  flex-direction: column;
+}
+.main-detail {
+  background-color: #2c3333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.detail-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #fff;
+}
+.detail-txt {
+  color: #fff;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+.detail-txt h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+.detail-txt p {
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+}
+.detail-txt span {
+  display: flex;
+  flex-direction: row;
+}
+.detail-rate,
+.detail-language {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.detail-rate i {
+  margin-right: -12px;
+  font-size: 1.5rem;
+}
+.detail-language i {
+  margin-right: -5px;
+  font-size: 1.5rem;
+  color: gold;
+}
+.additional-detail {
+  color: #2c3333;
+  width: 100%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.additional-detail h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.7px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.detail-CTA {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 10px -1px 10px -6px rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail-CTA button:first-of-type {
+  background-color: #2c3333;
+}
+.detail-CTA button {
+  font-family: "Montserrat", sans-serif;
+  width: 100px;
+  height: 40px;
+  background-color: #5e81f4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 1rem;
+}
+@media screen and (min-width: 420px) {
+  .detail-CTA button {
+    width: 150px;
+  }
+}
+@media screen and (min-width: 460px) {
+  .detail-img img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .detail-CTA button {
+    width: 200px;
+  }
+  .detail-img img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .detail-CTA button {
+    width: 250px;
+  }
+  .detail-img img {
+    width: 350px;
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-detail {
+    flex-direction: row;
+    padding: 3rem;
+  }
+  .detail-txt h1 {
+    font-size: 2rem;
+  }
+  .detail-txt p {
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+  }
+  .additional-detail {
+    padding: 3rem;
+  }
+}

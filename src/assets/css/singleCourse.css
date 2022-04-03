@@ -1,0 +1,154 @@
+.singleCourse {
+  margin-bottom: 2.5rem;
+  animation-name: singleCourseAnimate;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+@keyframes singleCourseAnimate {
+  from {
+    transform: scale(0.8, 0.8);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+.course-container {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border: 2px solid #5e81f4;
+  border-radius: 8px;
+  padding: 0.3rem;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s all ease;
+}
+.main-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-course {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.auther-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 0 0.9rem;
+}
+.auther-info h2 {
+  width: 100%;
+  height: auto;
+  font-size: 1.29rem;
+  font-weight: 900;
+  word-wrap: break-word;
+  padding-bottom: 0.8rem;
+  color: rgb(68, 67, 67);
+}
+.auther-info p {
+  width: 100%;
+  height: auto;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  word-wrap: break-word;
+  color: rgb(73, 68, 68);
+}
+.auther-info span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.fa-star {
+  color: gold;
+  padding: 0 0.3rem 0 0;
+}
+.course-img {
+  border-radius: 100%;
+}
+.course-img img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.additional-info {
+  width: 100%;
+  height: auto;
+  transition: 0.9s all ease;
+  display: flex;
+  flex-direction: column;
+}
+.additional-info h6 {
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+  word-wrap: break-word;
+  padding: 1rem 2rem 1rem 1rem;
+  letter-spacing: 0.3px;
+  color: rgb(124, 117, 117);
+}
+.CTA-course {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 100%;
+  opacity: 1;
+  transition: 1s all ease;
+}
+.CTA-course button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.4rem;
+
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  height: 35px;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.CTA-course button:hover,
+.CTA-course button:active {
+  transform: scale(0.97, 0.97);
+  border: 3px solid #5e81f4;
+  color: #5e81f4;
+  background-color: white;
+}
+.DeleteBtn button {
+  background-color: #ff6464;
+}
+.DeleteBtn button:hover,
+.DeleteBtn button:active {
+  border: 3px solid #ff6464;
+  color: #ff6464;
+}
+.AddBtn button {
+  background-color: #5e81f4;
+}
+.CTA-course p {
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+.CTA-course p a {
+  color: #5e81f4;
+}
+
+@media screen and (min-width: 460px) {
+  .auther-info h2 {
+    font-size: 1.5rem;
+  }
+  .additional-info h6 {
+    font-size: 1.1rem;
+  }
+}
