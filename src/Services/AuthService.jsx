@@ -1,6 +1,6 @@
 export default {
   login: (user) => {
-    return fetch("/user/login", {
+    return fetch("https://serverblaze.herokuapp.com/user/login", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -15,7 +15,7 @@ export default {
     });
   },
   register: (user) => {
-    return fetch("/user/register", {
+    return fetch("https://serverblaze.herokuapp.com/user/register", {
       method: "post",
       body: JSON.stringify(user),
       headers: {
@@ -27,7 +27,7 @@ export default {
       .catch((err) => err);
   },
   logout: () => {
-    return fetch("/user/logout")
+    return fetch("https://serverblaze.herokuapp.com/user/logout")
       .then((res) => res.json())
       .then((data) => data);
   },

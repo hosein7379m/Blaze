@@ -1,6 +1,6 @@
 export default {
   add: (course) => {
-    return fetch("/usercourse/add", {
+    return fetch("https://serverblaze.herokuapp.com/usercourse/add", {
       method: "post",
       body: JSON.stringify(course),
       headers: {
@@ -13,7 +13,7 @@ export default {
       .catch((err) => err);
   },
   findAll: (username) => {
-    return fetch("/usercourse/all", {
+    return fetch("https://serverblaze.herokuapp.com/usercourse/all", {
       method: "post",
       body: JSON.stringify(username),
       headers: {
@@ -24,7 +24,7 @@ export default {
     });
   },
   deleteCourse: (courseDel) => {
-    return fetch(`/usercourse/delete/${courseDel}`, {
+    return fetch(`https://serverblaze.herokuapp.com/usercourse/delete/${courseDel}`, {
       method: "DELETE",
       body: JSON.stringify(courseDel),
       headers: {
