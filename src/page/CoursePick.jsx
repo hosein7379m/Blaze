@@ -4,7 +4,7 @@ import SingleCourse from "../components/SingleCourse";
 import "../assets/css/coursePick.css";
 import { AuthContext } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import swal from "sweetalert";
+import toast, { Toaster } from "react-hot-toast";
 import CourseService from "../Services/CourseService";
 
 const CoursePick = () => {
@@ -49,8 +49,45 @@ const CoursePick = () => {
           }
         });
       }
-      /*  */
     }
+    /* handle guid section */
+    window.onload = () => {
+      {
+        <Toaster
+          toastOptions={{
+            className: "",
+            style: {
+              fontSize: "1.3rem",
+              fontWeight: "600",
+            },
+          }}
+        />;
+      }
+      toast(
+        (t) => (
+          <span className="guid-container">
+            <h1>Step-1</h1>
+            <p>
+              In this step you have to select the courses you want to take and
+              add them to your user panel.
+            </p>
+            <button
+              onClick={() => {
+                toast.dismiss(t.id);
+              }}
+            >
+              Ok
+            </button>
+          </span>
+        ),
+        {
+          duration: 30000,
+          style: {
+            padding: "0",
+          },
+        }
+      );
+    };
 
     return () => {
       isDone = false;
@@ -66,13 +103,7 @@ const CoursePick = () => {
       const { courses, message } = data;
       setSelectedCourse(courses);
       if (!message.hasCourse) {
-        swal({
-          title: "ERROR",
-          text: "You must select at least one course",
-          icon: "error",
-          button: "OK",
-          className: "error-alert",
-        });
+        toast.error("You must select at least one course");
       } else {
         navigate("/home");
       }
@@ -137,9 +168,7 @@ const CoursePick = () => {
             })}
         </section>
         <section className="footer-singleCourse">
-          <div>
-            <button onClick={handleStartTutorial}>Start Tutorial</button>
-          </div>
+          <button onClick={handleStartTutorial}>Start Tutorial</button>
         </section>
       </main>
     </div>

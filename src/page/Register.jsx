@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../assets/css/register.css";
 import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
@@ -21,6 +21,54 @@ const Register = (props) => {
     username: "",
     password: "",
   });
+  /*  */
+  useEffect(() => {
+    window.onload = () => {
+      if (
+        document.readyState === "complete" ||
+        document.readyState === "interactive"
+      ) {
+        {
+          <Toaster
+            toastOptions={{
+              className: "",
+              style: {
+                fontSize: "1.3rem",
+                fontWeight: "600",
+              },
+            }}
+          />;
+        }
+        toast(
+          (t) => (
+            <span className="guid-container">
+              <h1>Guid</h1>
+              <p>
+                Blaze allows you to take the best training courses and
+                strengthen your skills in the best possible way
+              </p>
+              <button
+                onClick={() => {
+                  toast.dismiss(t.id);
+                }}
+              >
+                Ok
+              </button>
+            </span>
+          ),
+          {
+            duration: 30000,
+            style: {
+              padding: "0",
+            },
+          }
+        );
+      }
+    };
+
+    return () => {};
+  }, []);
+
   /* ohChange function for insert username and password user in hook state */
   const onChangeSignUp = (e) => {
     const { name, value } = e.target;
@@ -114,11 +162,13 @@ const Register = (props) => {
           },
         }}
       />
+      <p></p>
       {/* form section */}
       <section className="form-container">
         {/* signup form */}
+
         <form className={`signup-form ${isSignUp ? "signupOff" : "signupOn"}`}>
-          <h1 className="form-title">SignUp</h1>
+          <h1 className="form-title">Sign Up</h1>
           <div className="input-field fName-signUp">
             {/* <i className="fa-solid fa-user"></i> */}
             <input
@@ -180,7 +230,7 @@ const Register = (props) => {
             }}
           />
           <div className="signUp-way">
-            <p>{isSignUp ? "Login with : " : "Sign up with : "}</p>
+            <p>{!isSignUp ? "Login with : " : "Sign up with : "}</p>
             <i className="fa-brands fa-google-plus-g"></i>
             <i className="fa-brands fa-github"></i>
           </div>
@@ -248,7 +298,7 @@ const Register = (props) => {
             {isSignUp ? "Already have account?" : "Dont have account?"}
           </p>
           <button className="switch-btn" onClick={changeRegister}>
-            {isSignUp ? "Login" : "SignUp"}
+            {isSignUp ? "Login" : "Sign Up"}
           </button>
         </div>
       </section>

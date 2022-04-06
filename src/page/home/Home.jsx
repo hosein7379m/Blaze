@@ -21,7 +21,12 @@ const Home = () => {
           style={{ opacity: `${sideStatus || menuStatus ? ".2" : "1"}` }}
           className={`main-content ${sideStatus ? "SideOpen" : null}`}
         >
-          <Header sideStatus={sideStatus} />
+          <Header
+            sideStatus={sideStatus}
+            setSideStatus={setSideStatus}
+            menuStatus={menuStatus}
+            setMenuStatus={setMenuStatus}
+          />
           <StartedCourse />
         </div>
       </section>

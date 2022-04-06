@@ -1,36 +1,52 @@
 .Header {
   width: 100%;
-  height: 11rem;
+  height: 11.2rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border-bottom: 2px solid #dddccc;
   font-family: "Montserrat", sans-serif;
+}
+.top-head{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .search-bar {
   background-color: #fff;
-  width: 300px;
-  height: 30px;
+  width: 350px;
+  height: 40px;
   border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-right: .5rem;
 }
 .search-bar i {
-  font-size: 1.4rem;
-  color: #fff;
-  background-color: rgb(131, 125, 125);
-  width: 30px;
-  height: 30px;
-  border-radius: 0 15px 15px 0;
-  padding: 0.75rem 0.6rem;
+  font-size: 2rem;
+  color: #5e81f4;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 15px;
+  padding: .8rem 0.6rem;
   cursor: pointer;
+  transform: rotate(5deg);
+  animation: floatingSearch 1s infinite;
+  transition: ease 0.5s;
+}
+@keyframes floatingSearch {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
 }
 .search-bar i:hover,
 .search-bar i:active {
-  background-color: #fff;
-  color: #5e81f4;
+  transform: scale(1.1, 1.1);
 }
 .search-bar input {
   background: none;
@@ -41,12 +57,37 @@
   letter-spacing: 0.8px;
   padding: 0 0.6rem;
   width: 100%;
+  height: 40px;
 }
 .search-bar input::placeholder {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.9px;
   font-weight: 400;
   color: rgb(71, 65, 65);
+}
+.side-handler {
+  width: 50px;
+  height: 30px;
+}
+.side-handler button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  background: none;
+}
+.side-handler i {
+  width: 40px;
+  height: 40px;
+  transition: all 0.5s ease-in-out;
+  color: #5e81f4;
+  font-size: 3.3rem;
+  padding: 0.4rem 0.5rem;
+}
+.turnArrow {
+  transform: rotate(180deg);
 }
 .header-cta {
   display: flex;

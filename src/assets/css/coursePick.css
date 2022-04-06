@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-bottom: 1.5rem;
 }
 .about-header {
   display: flex;
@@ -23,7 +22,7 @@
   align-items: center;
   width: 100%;
   padding: 1rem;
-  box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, 0.72);
+  box-shadow: 1px .5px 9px -8px rgba(0, 0, 0, 0.72);
   z-index: 5;
 }
 .fa-bars {
@@ -43,7 +42,7 @@
   font-family: "Tangerine", cursive;
 }
 .courses-list {
-  padding: 2%;
+  padding: 2% 2% 0 2%;
   overflow-y: auto;
 }
 .courses-list h2 {
@@ -52,18 +51,14 @@
   padding: 2rem 0;
 }
 .footer-singleCourse {
-  position: absolute;
-  bottom: 0;
-  left: 49.3%;
-  transform: translateX(-50%);
-  width: 95.7%;
+  width: 100%;
   height: 50px;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0px -2px 8px -6px rgba(0, 0, 0, 0.72);
+  box-shadow: 2px -.5px 8px -6px rgba(0, 0, 0, 0.72);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 .footer-singleCourse button {
   font-family: "Montserrat", sans-serif;
@@ -78,6 +73,7 @@
   letter-spacing: 0.6px;
   text-transform: uppercase;
   cursor: pointer;
+  margin: 5px 0;
 }
 .footer-singleCourse button:hover,
 .footer-singleCourse button:active {
@@ -92,7 +88,6 @@
     width: 70%;
   }
   .about-header {
-    box-shadow: 10px 1px 10px -6px rgba(0, 0, 0, 0.72);
     padding: 1rem 2rem;
   }
   .blaze-logo h1 {

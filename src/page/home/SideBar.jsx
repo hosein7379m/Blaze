@@ -8,26 +8,24 @@ const SideBar = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
       className={`SideBar ${sideStatus ? "SideOp" : "SideCl"} `}
       style={{ opacity: `${menuStatus ? ".2" : "1"}` }}
     >
-      <span className={`side-handler`}>
-        <button
+      <span
+        className="close-handler"
+        style={{ opacity: `${sideStatus ? "1" : "0"}` }}
+      >
+        <i
+          className="fa-solid fa-xmark"
           onClick={() => {
-            setSideStatus(!sideStatus);
-            if (menuStatus) {
-              setMenuStatus(false);
-            }
+            setSideStatus(false);
           }}
-        >
-          <i
-            className={`fa-solid fa-arrow-right ${
-              sideStatus ? "turnArrow" : null
-            }`}
-          ></i>
-        </button>
+        ></i>
       </span>
       <div className={`side-container`}>
-        <span className={`side-header`}>
+        <span
+          className={`side-header`}
+          style={{ opacity: `${sideStatus ? "1" : "0"}` }}
+        >
           <img src={Blaze} />
-          <h1 style={{ opacity: `${sideStatus ? "1" : "0"}` }}>Blaze</h1>
+          <h1>Blaze</h1>
         </span>
         <div
           style={{ opacity: `${sideStatus ? "1" : "0"}` }}

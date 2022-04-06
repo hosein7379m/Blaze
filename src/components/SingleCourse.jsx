@@ -3,6 +3,7 @@ import "../assets/css/singleCourse.css";
 import { AuthContext } from "../Context/AuthContext";
 import CourseService from "../Services/CourseService";
 import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 
 const SingleCourse = ({
   id,
@@ -21,7 +22,6 @@ const SingleCourse = ({
     complete: false,
   });
   const [hasCourse, setHasCourse] = useState(false);
-
   /*  */
   const showDetailtHandle = (e) => {
     setDetailCourseeId(e.target.name);
@@ -54,17 +54,25 @@ const SingleCourse = ({
         })
         .catch((err) => console.log(err));
     }
+
     e.preventDefault();
   };
+  // const deleteCourseHandler = (e) => {
+  //   /*  */
+  //   console.log("hazf shod");
+
+  //   /* delete course from db */
+  //   const _id = e.target.name;
+  //   axios
+  //     .delete(`https://serverblaze.herokuapp.com/usercourse/delete/${_id}`)
+  //     .then((data) => console.log(data));
+
+  //   e.preventDefault();
+  // };
 
   useEffect(() => {
     let isDone = true;
     if (isDone) {
-      /* delete course from db */
-      // const _id = "624183e6ee5c606b18b309b7";
-      // axios
-      //   .delete(`/usercourse/delete/${_id}`)
-      //   .then((data) => console.log(data));
     }
     return () => {
       isDone = false;
@@ -104,7 +112,7 @@ const SingleCourse = ({
           <h6>{about}</h6>
           <div className={`CTA-course ${hasCourse ? "DeleteBtn" : "AddBtn"}`}>
             <button onClick={addCourseHandler} name={id}>
-              {hasCourse ? "Delete" : "Add"}
+              Add
             </button>
             <p>
               Describtion:{" "}

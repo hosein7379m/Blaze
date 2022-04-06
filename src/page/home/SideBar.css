@@ -2,7 +2,7 @@
 .SideBar {
   background-color: #eeeeee;
   height: 100vh;
-  width: 10%;
+  width: 0%;
   z-index: 5;
   position: absolute;
   transition: all 0.5s ease-in-out;
@@ -10,31 +10,17 @@
 }
 .SideOp {
   width: 50%;
-  border-right: 1px solid #dddccc;
 }
-.side-handler {
+.close-handler{
+  transition: all 0.4s ease-in-out;
   width: 100%;
-  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: .8rem 1.2rem;
 }
-.side-handler button {
-  position: absolute;
-  right: -15px;
-  top: 4.5rem;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid #5e81f4;
-  cursor: pointer;
-  z-index: 10;
-}
-.side-handler i {
-  transition: all 0.5s ease-in-out;
-  color: #5e81f4;
-  font-size: 1.7rem;
-  padding: 0.5rem 0.5rem;
-}
-.turnArrow {
-  transform: rotate(180deg);
+.close-handler i{
+  font-size: 4.8rem;
 }
 .side-container {
   display: flex;
@@ -45,6 +31,7 @@
 }
 .side-header {
   padding-bottom: 2rem;
+  transition: all 0.4s ease-in-out;
 }
 .side-header img{
   width: 40px;
@@ -69,7 +56,7 @@
 .side-join-cta {
   background-color: #5e81f4;
   height: 30px;
-  width: 140px;
+  width: 150px;
   text-align: center;
   padding: 0.6rem 0;
   border-radius: 8px;
@@ -84,7 +71,6 @@
 .side-join-cta:hover,
 .side-join-cta:active {
   background-color: #fff;
-
   border: 2px solid #5e81f4;
 }
 .side-join-cta:hover button,
@@ -98,7 +84,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  width: 120px;
+  width: 150px;
   height: 30px;
   margin: 1rem 0;
   padding: 0 0.8rem;

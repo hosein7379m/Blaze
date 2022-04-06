@@ -115,24 +115,14 @@
   width: 120px;
   cursor: pointer;
   transition: 0.2s all ease;
+  background-color: #5e81f4;
 }
 .CTA-course button:hover,
 .CTA-course button:active {
   transform: scale(0.97, 0.97);
   border: 3px solid #5e81f4;
   color: #5e81f4;
-  background-color: white;
-}
-.DeleteBtn button {
-  background-color: #ff6464;
-}
-.DeleteBtn button:hover,
-.DeleteBtn button:active {
-  border: 3px solid #ff6464;
-  color: #ff6464;
-}
-.AddBtn button {
-  background-color: #5e81f4;
+  background-color: #fff;
 }
 .CTA-course p {
   font-size: 1.25rem;
@@ -141,6 +131,7 @@
 }
 .CTA-course p a {
   color: #5e81f4;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 460px) {
