@@ -5,7 +5,7 @@ import { AuthContext } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
-const Register = (props) => {
+const Register = () => {
   const navigate = useNavigate();
   /* import global context api */
   const authContext = useContext(AuthContext);
@@ -22,52 +22,62 @@ const Register = (props) => {
     password: "",
   });
   /*  */
+
   useEffect(() => {
-    window.onload = () => {
-      if (
-        document.readyState === "complete" ||
-        document.readyState === "interactive"
-      ) {
-        {
-          <Toaster
-            toastOptions={{
-              className: "",
-              style: {
-                fontSize: "1.3rem",
-                fontWeight: "600",
-              },
-            }}
-          />;
-        }
-        toast(
-          (t) => (
-            <span className="guid-container">
-              <h1>Guid</h1>
-              <p>
-                Blaze allows you to take the best training courses and
-                strengthen your skills in the best possible way
-              </p>
-              <button
-                onClick={() => {
-                  toast.dismiss(t.id);
-                }}
-              >
-                Ok
-              </button>
-            </span>
-          ),
-          {
-            duration: 30000,
+    localStorage.setItem("guid0", true);
+
+    if (localStorage.getItem("guid0")) {
+      {
+        <Toaster
+          toastOptions={{
+            className: "",
             style: {
-              padding: "0",
+              fontSize: "1.3rem",
+              fontWeight: "600",
             },
-          }
-        );
+          }}
+        />;
       }
-    };
+      toast(
+        (t) => (
+          <span className="guid-container">
+            <h1>Guid</h1>
+            <p>
+              Blaze allows you to take the best training courses and strengthen
+              your skills in the best possible way
+            </p>
+            <button
+              onClick={() => {
+                toast.dismiss(t.id);
+                localStorage.setItem("guid0", false);
+              }}
+            >
+              Ok
+            </button>
+          </span>
+        ),
+        {
+          duration: 30000,
+          style: {
+            padding: "0",
+          },
+        }
+      );
+    }
+    setTimeout(() => {
+      localStorage.setItem("guid0", false);
+    }, 30000);
+    // window.onload = () => {
+    //   if (
+    //     document.readyState === "complete" ||
+    //     document.readyState === "interactive"
+    //   ) {
+    //   }
+    // };
 
     return () => {};
   }, []);
+  console.log(localStorage.getItem("guid0"));
 
   /* ohChange function for insert username and password user in hook state */
   const onChangeSignUp = (e) => {
