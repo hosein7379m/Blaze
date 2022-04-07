@@ -32,7 +32,7 @@ const Sidebar = ({
         <div className="info-cat">
           <div className="user-info">
             <div className="user-greeting">
-              <h3>Hi</h3>
+              <h3>hi</h3>
               <h1>{localStorage.getItem("currUser")}</h1>
             </div>
             <div className="close-menu">

@@ -50,44 +50,6 @@ const CoursePick = () => {
         });
       }
     }
-    /* handle guid section */
-    window.onload = () => {
-      {
-        <Toaster
-          toastOptions={{
-            className: "",
-            style: {
-              fontSize: "1.3rem",
-              fontWeight: "600",
-            },
-          }}
-        />;
-      }
-      toast(
-        (t) => (
-          <span className="guid-container">
-            <h1>Step-1</h1>
-            <p>
-              In this step you have to select the courses you want to take and
-              add them to your user panel.
-            </p>
-            <button
-              onClick={() => {
-                toast.dismiss(t.id);
-              }}
-            >
-              Ok
-            </button>
-          </span>
-        ),
-        {
-          duration: 30000,
-          style: {
-            padding: "0",
-          },
-        }
-      );
-    };
 
     return () => {
       isDone = false;
@@ -109,6 +71,31 @@ const CoursePick = () => {
       }
     });
   };
+  const handleGuid1 = () => {
+    toast(
+      (t) => (
+        <span className="guid-content">
+          <h1>Step-1</h1>
+          <p>
+            In this step you have to select the courses you want to take and add
+            them to your user panel.
+          </p>
+          <button
+            onClick={() => {
+              toast.dismiss(t.id);
+            }}
+          >
+            Ok
+          </button>
+        </span>
+      ),
+      {
+        style: {
+          padding: "0",
+        },
+      }
+    );
+  };
 
   return (
     <div className="main-course">
@@ -118,6 +105,15 @@ const CoursePick = () => {
         currCategory={currCategory}
         setCurrCategory={setCurrCategory}
         username={user}
+      />
+      <Toaster
+        toastOptions={{
+          className: "",
+          style: {
+            fontSize: "1.3rem",
+            fontWeight: "600",
+          },
+        }}
       />
       <main
         className={`courseList`}
@@ -136,7 +132,14 @@ const CoursePick = () => {
           </div>
         </section>
         <section className="courses-list">
-          <h2>Choose your favorite courses</h2>
+          <h2>
+            Choose your favorite courses{" "}
+            <i
+              onClick={handleGuid1}
+              className="fa-regular fa-circle-question coursePickguid"
+            ></i>{" "}
+          </h2>
+
           {allCourse
             .filter((cat) => {
               if (currCategory) {

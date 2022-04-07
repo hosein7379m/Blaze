@@ -22,62 +22,32 @@ const Register = () => {
     password: "",
   });
   /*  */
-
-  useEffect(() => {
-    localStorage.setItem("guid0", true);
-
-    if (localStorage.getItem("guid0")) {
+  /* function for handle guid alert */
+  const handleGuid = () => {
+    toast(
+      (t) => (
+        <span className="guid-content">
+          <h1>Guid</h1>
+          <p>
+            Blaze allows you to take the best training courses and strengthen
+            your skills in the best possible way. follow the guid step by step.
+          </p>
+          <button
+            onClick={() => {
+              toast.dismiss(t.id);
+            }}
+          >
+            Ok
+          </button>
+        </span>
+      ),
       {
-        <Toaster
-          toastOptions={{
-            className: "",
-            style: {
-              fontSize: "1.3rem",
-              fontWeight: "600",
-            },
-          }}
-        />;
+        style: {
+          padding: "0",
+        },
       }
-      toast(
-        (t) => (
-          <span className="guid-container">
-            <h1>Guid</h1>
-            <p>
-              Blaze allows you to take the best training courses and strengthen
-              your skills in the best possible way
-            </p>
-            <button
-              onClick={() => {
-                toast.dismiss(t.id);
-                localStorage.setItem("guid0", false);
-              }}
-            >
-              Ok
-            </button>
-          </span>
-        ),
-        {
-          duration: 30000,
-          style: {
-            padding: "0",
-          },
-        }
-      );
-    }
-    setTimeout(() => {
-      localStorage.setItem("guid0", false);
-    }, 30000);
-    // window.onload = () => {
-    //   if (
-    //     document.readyState === "complete" ||
-    //     document.readyState === "interactive"
-    //   ) {
-    //   }
-    // };
-
-    return () => {};
-  }, []);
-  console.log(localStorage.getItem("guid0"));
+    );
+  };
 
   /* ohChange function for insert username and password user in hook state */
   const onChangeSignUp = (e) => {
@@ -124,7 +94,7 @@ const Register = () => {
             navigate("/course");
           }, 1500);
         } else {
-          toast.success(message.msgBody);
+          toast.error(message.msgBody);
         }
       });
     } else if (!signUp.firstName) {
@@ -293,6 +263,9 @@ const Register = () => {
       </section>
       {/* switch section */}
       <section className="switch-container">
+        <span className="guid-container">
+          <i className="fa-regular fa-circle-question" onClick={handleGuid}></i>
+        </span>
         <div className="switch">
           <div className="switch-brand">
             <h1>

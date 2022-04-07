@@ -1,6 +1,6 @@
 .sidebar {
   width: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: inset -2px 0px 5px -5px rgba(0, 0, 0, 0.72);
@@ -11,7 +11,7 @@
 .sideOpen {
   opacity: 1;
   width: 60%;
-  height: 100vh;
+  height: 100%;
   transition: 0.3s all ease-in;
   position: absolute;
   left: 0;
@@ -54,7 +54,7 @@
   word-wrap: break-word;
 }
 .fa-xmark {
-  font-size: 3.3rem;
+  font-size: 4rem;
   color: #5e81f4;
   cursor: pointer;
   display: inline-block;
@@ -90,9 +90,9 @@
   background-color: #5e81f4;
   border: none;
   border-radius: 10px;
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
   padding: 0.5rem;
-  height: 35px;
+  height: 45px;
   width: 90%;
   cursor: pointer;
   transition: 0.1s all ease-in;
@@ -108,7 +108,7 @@
   width: 100%;
   position: relative;
   transform: translateX(-50%);
-  bottom: 5%;
+  bottom: 8%;
   left: 50%;
   display: flex;
   flex-direction: column;
