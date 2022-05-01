@@ -68,6 +68,7 @@ const CoursePick = () => {
         toast.error("You must select at least one course");
       } else {
         navigate("/home");
+        window.location.reload();
       }
     });
   };
@@ -164,6 +165,7 @@ const CoursePick = () => {
                   about={course.about}
                   rate={course.rate}
                   image={course.image}
+                  language={course.language}
                   addedCourse={addedCourse}
                   setAddedCourse={setAddedCourse}
                 />

@@ -1,15 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
 .SideBar {
-  background-color: #eeeeee;
+  background-color: #fff;
   height: 100vh;
   width: 0%;
-  z-index: 5;
+  z-index: 8;
   position: absolute;
   transition: all 0.5s ease-in-out;
   font-family: "Montserrat", sans-serif;
+  box-shadow: inset -2px 0px 5px -5px rgba(0, 0, 0, 0.72);
 }
 .SideOp {
   width: 50%;
+}
+.SideCl{
+  opacity: 0;
+}
+.close{
+  opacity: 0;
+}
+.open{
+  opacity: 1;
 }
 .close-handler{
   transition: all 0.4s ease-in-out;
@@ -20,7 +30,7 @@
   padding: .8rem 1.2rem;
 }
 .close-handler i{
-  font-size: 4.8rem;
+  font-size: 4.5rem;
 }
 .side-container {
   display: flex;
@@ -40,6 +50,7 @@
   transition: all 0.4s ease-in-out;
 }
 .side-btn {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,22 +60,18 @@
 .side-btn span {
   transition: all 0.1s ease-in-out;
 }
-.side-btn span:hover i,
-.side-btn span:active i {
-  color: #fff;
-}
 .side-join-cta {
   background-color: #5e81f4;
-  height: 30px;
-  width: 150px;
+  height: 45px;
+  width: 90%;
   text-align: center;
-  padding: 0.6rem 0;
+  padding: 1.2rem 0;
   border-radius: 8px;
 }
 .side-join-cta button {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 1.3;
+  font-size: 1.6rem;
   color: #fff;
   letter-spacing: 0.5px;
 }
@@ -79,39 +86,38 @@
 }
 .side-all-cta,
 .side-chat-cta,
-.side-setting-cta {
+.side-setting-cta,
+.side-developer-cta {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  width: 150px;
-  height: 30px;
+  width: 90%;
+  height: 45px;
   margin: 1rem 0;
-  padding: 0 0.8rem;
+  padding: 0 1.5rem;
   border-radius: 8px;
+  cursor: pointer;
 }
 .side-all-cta:hover,
 .side-chat-cta:hover,
 .side-setting-cta:hover,
 .side-all-cta:active,
 .side-chat-cta:active,
-.side-setting-cta:active {
-  background-color: #5e81f4;
-}
-.side-all-cta:hover button,
-.side-chat-cta:hover button,
-.side-setting-cta:hover button,
-.side-all-cta:active button,
-.side-chat-cta:active button,
-.side-setting-cta:active button {
-  color: #fff;
+.side-setting-cta:active,
+.side-developer-cta:hover,
+.side-developer-cta:active {
+  border: 2px solid #5e81f4;
 }
 .side-all-cta button,
 .side-chat-cta button,
-.side-setting-cta button {
-  color: #292927;
+.side-setting-cta button,
+.side-developer-cta button,
+.side-developer-cta button {
+  color: rgb(68, 67, 67);
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  font-size: 1.5rem;
 }
 .side-btn span i {
   font-size: 1.5rem;
@@ -122,4 +128,37 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+/*  */
+@media screen and (min-width: 700px){
+  .SideBar{
+    width: 25%;
+  }
+  .close{
+    opacity: 1;
+  }
+  .side-all-cta,
+  .side-chat-cta,
+  .side-setting-cta,
+  .side-developer-cta{
+    padding: 0 1rem;
+  }
+}
+@media screen and (min-width: 850px){
+  
+}
+@media screen and (min-width: 1024px){
+  .SideBar{
+    background: #fff;
+    box-shadow: none;
+  }
+  .side-join-cta,
+  .side-all-cta,
+  .side-chat-cta,
+  .side-setting-cta,
+  .side-developer-cta{
+    width: 80%;
+    height: 40px;
+    margin: .3rem 0;
+  }
 }

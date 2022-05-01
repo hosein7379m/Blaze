@@ -37,4 +37,30 @@ export default {
       return res.json().then((data) => data);
     });
   },
+  updateFavorite: (courseFav) => {
+    return fetch(
+      `https://serverblaze.herokuapp.com/usercourse/updatefavorite/${courseFav}`,
+      {
+        method: "patch",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => {
+      return res.json().then((data) => data);
+    });
+  },
+  updateFavorite: (courseComp) => {
+    return fetch(
+      `https://serverblaze.herokuapp.com/usercourse/updatecomplete/${courseComp}`,
+      {
+        method: "patch",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => {
+      return res.json().then((data) => data);
+    });
+  },
 };

@@ -6,8 +6,11 @@ import { AuthContext } from "./Context/AuthContext";
 import CoursePick from "./page/CoursePick";
 import DetailCourse from "./page/DetailCourse";
 import Home from "./page/home/Home";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  AOS.init();
   const {
     user,
     setUser,
@@ -21,7 +24,6 @@ function App() {
     selectedCourses,
     setSelectedCourses,
   } = useContext(AuthContext);
-  //console.log(selectedCourses);
 
   return (
     <div className="App">

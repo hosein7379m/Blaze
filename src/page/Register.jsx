@@ -142,7 +142,6 @@ const Register = () => {
           },
         }}
       />
-      <p></p>
       {/* form section */}
       <section className="form-container">
         {/* signup form */}

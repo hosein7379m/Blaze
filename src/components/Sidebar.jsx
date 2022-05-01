@@ -17,6 +17,7 @@ const Sidebar = ({
     window.onresize = resize;
   }, []);
   const resize = () => {
+    console.log(width);
     if (width >= 701) {
       setSideStatus(false);
     }

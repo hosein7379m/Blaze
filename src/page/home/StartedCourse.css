@@ -1,4 +1,130 @@
 .StartedCourse {
-  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background: #fff;
+  padding: .5rem;
+  margin: 1rem;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(to bottom, #bfcfff, #cbd9ff, #d8e3ff, #e5ecff, #f2f6ff);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.72);
+  transition: all .3s ease-in-out;
+  transform: scale(1, 1);
+  animation: cartCourse .5s;
+  animation-iteration-count: 1;
+}
+@keyframes cartCourse {
+  0% {
+    transform: scale(0, 0);
+  }
+  50% {
+    transform: rotate(1, 1);
+  }
+}
+.image-cover{
+  width: 290px;
+  height: 150px;
+}
+.image-cover img{
   width: 100%;
+  height: 150px;
+}
+.course-info{
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: .5rem;
+}
+.course-name{
+  width: 100%;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1.5rem 0 1rem 0;
+}
+.course-duration{
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: .5rem 0 .5rem 0;
+}
+.course-lang{
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: .5rem 0 .5rem 0;
+}
+.course-cta{
+  width: 290px;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  padding: .5rem 0 .5rem 0;
+}
+.cta-play{
+  font-size: 2rem;
+  border-radius: 50%;
+  border: none;
+  background: #5e81f4;
+  color: #fff;
+  padding: 0.2rem 0 0 .3rem;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+}
+.cta-play:hover,
+.cta-play:active{
+  transform: scale(1.1, 1.1);
+}
+.cta-fav,
+.cta-comp{
+  font-size: 2rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .5s all ease-in-out;
+}
+.cta-fav:active,
+.cta-comp:active{
+transform: scale(.1, .1);
+}
+.fa-heart,
+.fa-circle-check{
+  color: #5e81f4;
+}
+.redLike{
+  color: #FF1818;
+}
+.greenCheck{
+  color: #83BD75;
+}
+.course-cta button{
+  width: 30px;
+  height: 30px;
+}
+@media screen and (max-width: 300px){
+   .StartedCourse{
+   width: 270px;
+  } 
+  .image-cover{
+    width: 260px;
+  }
+  .course-info{
+    width: 260px;
+  }
+  .course-cta{
+    width: 260px;
+  }
+  
+}
+@media screen and (min-width: 1024px){
+  /* .StartedCourse{
+   width: 85%;
+   height: 220px;
+   margin: 1.1rem 0;
+  } */
 }

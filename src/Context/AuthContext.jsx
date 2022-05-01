@@ -17,6 +17,7 @@ export default ({ children }) => {
   const [detailCourseId, setDetailCourseeId] = useState(null);
   /* this section for course route  function */
   const [selectedCourses, setSelectedCourses] = useState([]);
+  /* Console Course */
 
   /*  */
   useEffect(() => {
@@ -36,19 +37,22 @@ export default ({ children }) => {
         username: localStorage.getItem("currUser"),
       };
       CourseService.findAll(user).then((data) => {
-        setSelectedCourses(data);
+        setSelectedCourses(data.courses);
       });
+      // selectedCourses.map((seleCourse) => {
+      //   courses.map((checkCourse) => {
+      //     if (seleCourse.courseID === checkCourse.id) {
+      //       console.log(checkCourse);
+      //     }
+      //   });
+      // });
     }
-
+    /*  */
     return () => {
       isDone = false;
     };
-
-    /*  */
   }, []);
-  //console.log(user);
-  //console.log(hasCourse);
-  //console.log(selectedCourses);
+
   return (
     <div>
       {!isLoaded ? (

@@ -12,12 +12,16 @@ const SingleCourse = ({
   auther,
   image,
   rate,
+  language,
   setAddedCourse,
 }) => {
   const { detailCourseId, setDetailCourseeId } = useContext(AuthContext);
   const [courseForAdd, setCourseForAdd] = useState({
     username: "",
     courseID: "",
+    name: "",
+    language: "",
+    image: "",
     favorite: false,
     complete: false,
   });
@@ -32,6 +36,9 @@ const SingleCourse = ({
     setCourseForAdd({
       username: localStorage.getItem("currUser"),
       courseID: e.target.name,
+      name: e.target.title,
+      language: e.target.id,
+      image: e.target.className,
       favorite: false,
       complete: false,
     });
@@ -39,15 +46,25 @@ const SingleCourse = ({
     const courseSelect = {
       username: localStorage.getItem("currUser"),
       courseID: e.target.name,
+      name: e.target.title,
+      language: e.target.id,
+      image: e.target.className,
       favorite: false,
       complete: false,
     };
-    if (courseSelect.courseID && courseSelect.username) {
+    console.log(courseSelect);
+    if (
+      courseSelect.courseID &&
+      courseSelect.username &&
+      courseSelect.name &&
+      courseSelect.language &&
+      courseSelect.image
+    ) {
       CourseService.add(courseSelect)
         .then((data) => {
           const { message } = data;
           setHasCourse(!hasCourse);
-          toast.success(message.msgBody);
+          toast(message.msgBody);
           setAddedCourse((prevValue) => {
             return [...prevValue, data];
           });
@@ -111,7 +128,13 @@ const SingleCourse = ({
         <div className="additional-info">
           <h6>{about}</h6>
           <div className={`CTA-course ${hasCourse ? "DeleteBtn" : "AddBtn"}`}>
-            <button onClick={addCourseHandler} name={id}>
+            <button
+              onClick={addCourseHandler}
+              name={id}
+              title={name}
+              id={language}
+              className={image}
+            >
               Add
             </button>
             <p>

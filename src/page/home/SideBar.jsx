@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SideBar.css";
 import Blaze from "../../image/BlazeBrand.ico";
 
-const SideBar = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
+const SideBar = ({
+  sideStatus,
+  setSideStatus,
+  menuStatus,
+  setMenuStatus,
+  width,
+}) => {
   return (
     <div
       className={`SideBar ${sideStatus ? "SideOp" : "SideCl"} `}
-      style={{ opacity: `${menuStatus ? ".2" : "1"}` }}
+      style={{ opacity: `${menuStatus && width < 700 ? ".2" : "1"}` }}
     >
-      <span
-        className="close-handler"
-        style={{ opacity: `${sideStatus ? "1" : "0"}` }}
-      >
+      <span className={`close-handler ${sideStatus ? "open" : "close"}`}>
         <i
           className="fa-solid fa-xmark"
           onClick={() => {
@@ -19,18 +22,12 @@ const SideBar = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
           }}
         ></i>
       </span>
-      <div className={`side-container`}>
-        <span
-          className={`side-header`}
-          style={{ opacity: `${sideStatus ? "1" : "0"}` }}
-        >
+      <div className={`side-container ${sideStatus ? "open" : "close"}`}>
+        <span className={`side-header`}>
           <img src={Blaze} />
           <h1>Blaze</h1>
         </span>
-        <div
-          style={{ opacity: `${sideStatus ? "1" : "0"}` }}
-          className={`side-btn`}
-        >
+        <div className={`side-btn`}>
           <span className="side-join-cta">
             <button>Join a course</button>
           </span>
@@ -45,6 +42,10 @@ const SideBar = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
           <span className="side-setting-cta">
             <i className="fa-solid fa-gear"></i>
             <button>Setting</button>
+          </span>
+          <span className="side-developer-cta">
+            <i className="uil uil-arrow"></i>
+            <button>Developer</button>
           </span>
         </div>
       </div>

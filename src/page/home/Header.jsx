@@ -1,7 +1,14 @@
 import React from "react";
 import "./Header.css";
 
-const Header = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
+const Header = ({
+  sideStatus,
+  setSideStatus,
+  menuStatus,
+  setMenuStatus,
+  CustomCat,
+  setCustomCat,
+}) => {
   return (
     <div className="Header">
       <div className="top-head">
@@ -33,8 +40,9 @@ const Header = ({ sideStatus, setSideStatus, menuStatus, setMenuStatus }) => {
       <div className="header-cta">
         <h1>All Courses</h1>
         <div className="cta-btn">
-          <button>Favorite</button>
-          <button>Complete</button>
+          <button className="cta-btn-all" onClick={() => setCustomCat("All")}>All</button>
+          <button onClick={() => setCustomCat("Favorite")}>Favorite</button>
+          <button onClick={() => setCustomCat("Complete")}>Complete</button>
         </div>
       </div>
     </div>
