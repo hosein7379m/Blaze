@@ -21,7 +21,9 @@ const SideBar = ({
       username: localStorage.getItem("currUser"),
     };
     await axios
-      .delete(`http://localhost:4000/user/deleteuser/${user.username}`)
+      .delete(
+        `https://serverblaze.herokuapp.com/user/deleteuser/${user.username}`
+      )
       .then((data) => {
         if (data.data.success) {
           console.log(data.data.success);

@@ -32,7 +32,7 @@ export default ({ children }) => {
         setIsLoaded(true);
       });
       axios
-        .get("http://localhost:4000/courses")
+        .get("https://serverblaze.herokuapp.com/courses")
         .then((data) => setCourses(data.data))
         .catch((err) => console.log(err));
       /*  */
