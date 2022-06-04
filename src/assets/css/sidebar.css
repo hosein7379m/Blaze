@@ -6,6 +6,7 @@
   box-shadow: inset -2px 0px 5px -5px rgba(0, 0, 0, 0.72);
   font-family: "Montserrat", sans-serif;
   position: relative;
+  background-color: #fff;
 }
 .sideOpen {
   opacity: 1;
