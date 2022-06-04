@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   box-shadow: inset -2px 0px 5px -5px rgba(0, 0, 0, 0.72);
-  background-color: #fff;
   font-family: "Montserrat", sans-serif;
   position: relative;
 }
@@ -83,12 +82,12 @@
 }
 .cat-btns button {
   font-family: "Montserrat", sans-serif;
-  color: white;
   letter-spacing: 0.5px;
   font-weight: 500;
   font-size: 1.4rem;
-  background-color: #5e81f4;
-  border: none;
+  border: 2px solid #000;
+  color: #000;
+  background-color: white;
   border-radius: 10px;
   margin: 0.4rem 0;
   padding: 0.5rem;
@@ -99,10 +98,10 @@
 }
 .cat-btns button:hover,
 .cat-btns button:active {
+  background-color: #5e81f4;
   transform: scale(0.97, 0.97);
-  border: 3px solid #5e81f4;
-  color: #5e81f4;
-  background-color: white;
+  color: white;
+  border: none;
 }
 .social-info {
   width: 100%;

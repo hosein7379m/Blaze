@@ -3,6 +3,8 @@ import AuthService from "../Services/AuthService";
 import axios from "axios";
 import CourseService from "../Services/CourseService";
 
+import "../assets/css/loadbar.css";
+
 export const AuthContext = createContext();
 
 export default ({ children }) => {
@@ -17,7 +19,8 @@ export default ({ children }) => {
   const [detailCourseId, setDetailCourseeId] = useState(null);
   /* this section for course route  function */
   const [selectedCourses, setSelectedCourses] = useState([]);
-  /* Console Course */
+  /* loadbar state */
+  const [loadTxt, setLoadTxt] = useState("Loading...");
 
   /*  */
   useEffect(() => {
@@ -29,7 +32,7 @@ export default ({ children }) => {
         setIsLoaded(true);
       });
       axios
-        .get("https://serverblaze.herokuapp.com/courses")
+        .get("http://localhost:4000/courses")
         .then((data) => setCourses(data.data))
         .catch((err) => console.log(err));
       /*  */
@@ -39,13 +42,11 @@ export default ({ children }) => {
       CourseService.findAll(user).then((data) => {
         setSelectedCourses(data.courses);
       });
-      // selectedCourses.map((seleCourse) => {
-      //   courses.map((checkCourse) => {
-      //     if (seleCourse.courseID === checkCourse.id) {
-      //       console.log(checkCourse);
-      //     }
-      //   });
-      // });
+      setTimeout(() => {
+        setLoadTxt(
+          "Please trun on your VPN and refresh the page...! if is not working because server is down. 🙂"
+        );
+      }, 6000);
     }
     /*  */
     return () => {
@@ -56,7 +57,14 @@ export default ({ children }) => {
   return (
     <div>
       {!isLoaded ? (
-        <h1>Loading...</h1>
+        <div className="load-page">
+          <div className="loader-wrapper">
+            <div className="loader">
+              <div className="loader loader-inner"></div>
+            </div>
+          </div>
+          <h1>{loadTxt}</h1>
+        </div>
       ) : (
         <AuthContext.Provider
           value={{

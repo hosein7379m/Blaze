@@ -17,13 +17,12 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  
   z-index: 1;
   transition: all 0.5s ease-in-out;
 }
 .content-course{
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background-color: #F5F5FB;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -51,7 +50,7 @@
 }
 @media screen and (min-width: 700px){
   .main-content{
-    width: 75%;
+    width: 100%;
     margin-left: 25%;
   }
   .SideOpen{
@@ -63,8 +62,12 @@
   flex-direction: row;
   width: 100%;
 }
+.main-content{
+  width: 100%;
+  margin-left: 20%;
+}
 .home-container{
-  width: 80%;
+  width: 100%;
 }
 .menu-handler{
   display: none;

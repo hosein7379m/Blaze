@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 const Header = ({
@@ -8,7 +8,13 @@ const Header = ({
   setMenuStatus,
   CustomCat,
   setCustomCat,
+  searchCourse,
+  setSearchCourse,
 }) => {
+  const handleSearchBar = (e) => {
+    const { value } = e.target;
+    setSearchCourse(value);
+  };
   return (
     <div className="Header">
       <div className="top-head">
@@ -28,6 +34,7 @@ const Header = ({
         </span>
         <div className="search-bar">
           <input
+            onChange={handleSearchBar}
             type="text"
             name="searchBar"
             placeholder="Search..."
@@ -40,7 +47,9 @@ const Header = ({
       <div className="header-cta">
         <h1>All Courses</h1>
         <div className="cta-btn">
-          <button className="cta-btn-all" onClick={() => setCustomCat("All")}>All</button>
+          <button className="cta-btn-all" onClick={() => setCustomCat("All")}>
+            All
+          </button>
           <button onClick={() => setCustomCat("Favorite")}>Favorite</button>
           <button onClick={() => setCustomCat("Complete")}>Complete</button>
         </div>

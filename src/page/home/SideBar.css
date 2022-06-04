@@ -11,12 +11,14 @@
 }
 .SideOp {
   width: 50%;
+  overflow-y: auto;
 }
 .SideCl{
   opacity: 0;
 }
 .close{
   opacity: 0;
+  display: none;
 }
 .open{
   opacity: 1;
@@ -130,6 +132,70 @@
   cursor: pointer;
 }
 /*  */
+.account{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.account h3:first-child{
+  margin: .7rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+.account-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  padding: 0 8%;
+}
+.user-icon{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.user-icon p{
+  font-size: 1.5rem;
+}
+.user-icon h2{
+  font-size: 1.5rem;
+  color: rgb(68, 67, 67);
+  margin-bottom: 1rem;
+}
+.drop-list{
+  transition: .2s all ease-in-out;
+  border-radius: 5px;
+}
+.drop-list li{
+  width: 150px;
+  height: 40px;
+  color: rgb(68, 67, 67);
+  text-align: left;
+  padding: 0 .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s all ease-in-out;
+  border-radius: 5px;
+}
+.drop-list li:hover,
+.drop-list li:active{
+  background-color: rgb(238, 236, 236);
+}
+.drop-list li i{
+  font-size: 1.8rem;
+  color: #5e81f4;
+}
+/*  */
 @media screen and (min-width: 700px){
   .SideBar{
     width: 25%;
@@ -143,6 +209,10 @@
   .side-developer-cta{
     padding: 0 1rem;
   }
+  .drop-list{
+    bottom: 12%;
+    left: 100%;
+  }
 }
 @media screen and (min-width: 850px){
   
@@ -151,6 +221,7 @@
   .SideBar{
     background: #fff;
     box-shadow: none;
+    width: 20%;
   }
   .side-join-cta,
   .side-all-cta,
@@ -160,5 +231,9 @@
     width: 80%;
     height: 40px;
     margin: .3rem 0;
+  }
+  .drop-list{
+    bottom: 24%;
+    left: 90%;
   }
 }

@@ -1,6 +1,6 @@
 export default {
   add: (course) => {
-    return fetch("https://serverblaze.herokuapp.com/usercourse/add", {
+    return fetch("http://localhost:4000/usercourse/add", {
       method: "post",
       body: JSON.stringify(course),
       headers: {
@@ -13,7 +13,7 @@ export default {
       .catch((err) => err);
   },
   findAll: (username) => {
-    return fetch("https://serverblaze.herokuapp.com/usercourse/all", {
+    return fetch("http://localhost:4000/usercourse/all", {
       method: "post",
       body: JSON.stringify(username),
       headers: {
@@ -24,22 +24,19 @@ export default {
     });
   },
   deleteCourse: (courseDel) => {
-    return fetch(
-      `https://serverblaze.herokuapp.com/usercourse/delete/${courseDel}`,
-      {
-        method: "DELETE",
-        body: JSON.stringify(courseDel),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((res) => {
+    return fetch(`http://localhost:4000/usercourse/delete/${courseDel}`, {
+      method: "DELETE",
+      body: JSON.stringify(courseDel),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
       return res.json().then((data) => data);
     });
   },
   updateFavorite: (courseFav) => {
     return fetch(
-      `https://serverblaze.herokuapp.com/usercourse/updatefavorite/${courseFav}`,
+      `http://localhost:4000/usercourse/updatefavorite/${courseFav}`,
       {
         method: "patch",
         headers: {
@@ -52,7 +49,7 @@ export default {
   },
   updateFavorite: (courseComp) => {
     return fetch(
-      `https://serverblaze.herokuapp.com/usercourse/updatecomplete/${courseComp}`,
+      `http://localhost:4000/usercourse/updatecomplete/${courseComp}`,
       {
         method: "patch",
         headers: {

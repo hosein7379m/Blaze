@@ -9,6 +9,7 @@
 .guid-content h1{
   font-size: 1.7rem;
   font-weight: 700;
+  margin: 1.5rem 0 .5rem 0;
 }
 .guid-content button{
   border: 2px solid #5e81f4;
@@ -27,43 +28,62 @@
 .guid-content button:active{
   transform: scale(.95, .95);
 }
-.register {
+.top-illus{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 280px;
+}
+.top-illus img{
   width: 100%;
-  height: 100%;
+}
+.bottom-illus{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+}
+.bottom-illus img{
+  width: 100%;
+}
+.register {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   font-family: "Montserrat", sans-serif;
-  overflow-y: auto;
+  overflow: hidden;
+  background-color: #5e81f4;
 }
 .form-container {
-  width: 100%;
-  height: 70vh;
+  background: rgba(233, 236, 235, 0.808);
+  backdrop-filter: blur( 4px );
+  box-shadow: 0px 8px 28px -10px #000000;
+  width: 350px;
+  height: 410px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 0 3rem 0;
-  background-color: #dce3fc;
+  z-index: 5;
   position: relative;
-  overflow-y: auto;
 }
 .signup-form {
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 0;
+  transition: all 1s ease-in-out;
 }
 .signupOn {
-  position: absolute;
-  transform: translate(-50%, -13%);
-  left: -2000px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transform: scale(0, 0);
 }
 .signupOff {
-  left: 50%;
-  transition: all 1.8s ease-in-out;
+  transform: scale(1, 1);
 }
 .form-title {
   font-size: 2.2rem;
@@ -77,13 +97,13 @@
 .username-login,
 .password-login {
   border: 2px solid #5e81f4;
-  width: 290px;
-  height: 55px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1rem 0;
+  width: 250px;
+  height: 45px;
   border-radius: 10px;
+  margin-bottom: .8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .fName-signUp i,
 .lName-signUp i,
@@ -91,9 +111,9 @@
 .password-signUp i,
 .username-login i,
 .password-login i {
-  color: dimgray;
   font-size: 1.2rem;
-  color: rgb(184, 180, 180);
+  color: rgb(97, 92, 92);
+  margin-left: .5rem;
 }
 .fName-signUp input,
 .lName-signUp input,
@@ -104,10 +124,11 @@
   border: none;
   background: none;
   outline: none;
-  width: 250px;
-  height: 55px;
+  margin: 0 .5rem;
   letter-spacing: 0.08rem;
   font-family: Verdana;
+  width: 230px;
+  height: 45px;
 }
 .fName-signUp input::placeholder,
 .lName-signUp input::placeholder,
@@ -116,6 +137,7 @@
 .username-login input::placeholder,
 .password-login input::placeholder {
   font-size: 1.35rem;
+  color: rgb(85, 80, 80);
 }
 .form-btn {
   width: 160px;
@@ -127,10 +149,10 @@
   font-size: 1.8rem;
   font-size: 600;
   font-family: "Montserrat", sans-serif;
-  margin: 2rem 0;
+  margin: 1rem 0;
   cursor: pointer;
   transition: all .3s ease-in-out;
-  box-shadow: 0px 0px 20px -10px #000000;
+  box-shadow: 0px 10px 20px -10px #000000;
 }
 .form-btn:hover,
 .form-btn:active{
@@ -140,62 +162,57 @@
   opacity: 0.5;
 }
 .signUp-way {
+  margin-top: .5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 170px;
-  margin-top: 1rem;
 }
 .signUp-way p{
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: .8px;
+  margin-right: 1rem;
 }
-.fa-google-plus-g,
-.fa-github {
-  font-size: 2.5rem;
-  color: #3c66f3;
+.switch-btn{
+  margin-top: .8rem;
+  border: 2px solid #444444;
+  border-radius: 10px;
+  background: none;
+  width: 70px;
+  height: 25px;
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+.switch-btn:hover,
+.switch-btn:active{
+  border: 2px solid #5e81f4;
+  color: #5e81f4;
 }
 .login-form {
   text-align: center;
+  transition: all 1.8s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 1s ease-in-out;
 }
 .loginOff {
-  left: 50%;
-  transition: all 1.8s ease-in-out;
+  transform: scale(1, 1);
 }
 .loginOn {
-  position: absolute;
-  transform: translate(-50%, -13%);
-  left: -2000px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transform: scale(0, 0);
 }
 .switch-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  display: none;
   text-align: center;
   padding: 1rem 0.5rem;
-  background-image: linear-gradient(
-    to bottom,
-    #6586f4,
-    #7b97f6,
-    #91a8f7,
-    #a6b8f7,
-    #dce3fc
-  );
+  position: absolute;
 }
 .guid-container{
   position: absolute;
   top: 2%;
-  left: 2%;
+  right: 2%;
 }
 .guid-container i{
   font-size: 2.5rem;
@@ -231,7 +248,6 @@
   color: rgb(82, 76, 76);
   letter-spacing: 1px;
   font-weight: 700;
-  /* transition: all 1s ease-in; */
 }
 .switch button {
   width: 90px;
@@ -244,16 +260,10 @@
   cursor: pointer;
   font-size: 1.35rem;
   letter-spacing: .8px;
-  /* transition: all 0.5s ease-in; */
 }
 .switch button:active {
   opacity: 0.5;
 }
-/* .switch-btn:active{
-  animation-name: switchAnimation;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-} */
 @keyframes switchAnimation {
   from {
     opacity: 1;
@@ -262,211 +272,16 @@
     opacity: 0;
   }
 }
-@media screen and (min-width: 520px){
-  .register{
-    height: 100vh;
-  }
-  .fName-signUp,
-  .lName-signUp,
-  .username-signUp,
-  .password-signUp,
-  .username-login,
-  .password-login {
-    width: 300px;
-    height: 55px;
-  }
-  .fName-signUp i,
-  .lName-signUp i,
-  .username-signUp i,
-  .password-signUp i,
-  .username-login i,
-  .password-login i {
-    font-size: 1.5rem;
-  }
-  .fName-signUp input,
-  .lName-signUp input,
-  .username-signUp input,
-  .password-signUp input,
-  .username-login input,
-  .password-login input {
-    height: 55px;
-    width: 265px;
-  }
-  .form-btn {
-    width: 170px;
-    height: 50px;
-    font-size: 1.7rem;
-  }
-  .signUp-way {
-    width: 180px;
-  }
-  .signUp-way p {
-    font-size: 1.25rem;
-  }
-  .switch h2 {
-    font-size: 1.85rem;
-  }
-  .switch h5 {
-    font-size: 1.4rem;
-  }
-  .switch p {
-    font-size: 1.2rem;
-  }
-}
-@media screen and (min-width: 720px) {
-  .register {
-    flex-direction: row-reverse;
-  }
-  .form-container {
-    height: 100%;
-  }
-  .signup-form {
-    transform: translateY(30%);
-  }
-  .signupOn {
-    position: absolute;
-    transform: translate(-50%, -30%);
-    left: -2000px;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-  }
-  .signupOff {
-    left: 50%;
-    transition: all 1.8s ease-in-out;
-  }
-  .login-form {
-    transform: translateY(60%);
-  }
-  .loginOff {
-    left: 50%;
-    transition: all 1.8s ease-in-out;
-  }
-  .loginOn {
-    position: absolute;
-    transform: translate(-50%, -30%);
-    left: -2000px;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-  }
-  .form-title {
-    font-size: 2.1rem;
-  }
-  .fName-signUp,
-  .lName-signUp,
-  .username-signUp,
-  .password-signUp,
-  .username-login,
-  .password-login {
-    width: 280px;
-    height: 45px;
-  }
-  .fName-signUp i,
-  .lName-signUp i,
-  .username-signUp i,
-  .password-signUp i,
-  .username-login i,
-  .password-login i {
-    font-size: 1.5rem;
-  }
-  .fName-signUp input,
-  .lName-signUp input,
-  .username-signUp input,
-  .password-signUp input,
-  .username-login input,
-  .password-login input {
-    height: 45px;
-    width: 230px;
-  }
-  .form-btn {
-    width: 140px;
-    height: 40px;
-    font-size: 1.7rem;
-  }
-  .signUp-way {
-    width: 150px;
-  }
-  .signUp-way p {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    font-weight: 500;
-    color: dimgray;
-  }
-  .fa-google-plus-g,
-  .fa-github {
-    font-size: 2rem;
-  }
-  .switch-container {
-    height: 100%;
-    background-image: linear-gradient(
-      to right,
-      #6586f4,
-      #7b97f6,
-      #96adf7,
-      #b2c0f1,
-      #dce3fc
-    );
-    justify-content: center;
-    padding: 2rem 1rem;
-  }
-  .switch-brand {
-    font-size: 4.5rem;
-  }
-  .switch h2 {
-    font-size: 1.9rem;
-  }
-  .switch h5 {
-    font-size: 1.4rem;
-  }
-  .switch p {
-    font-size: 1.25rem;
-    color: rgb(58, 54, 54);
-    letter-spacing: 1px;
-    font-weight: 600;
-  }
-  .switch button {
-    width: 120px;
-    height: 35px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1.9rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .fName-signUp,
-  .lName-signUp,
-  .username-signUp,
-  .password-signUp,
-  .username-login,
-  .password-login {
-    width: 330px;
-    height: 55px;
-  }
-  .fName-signUp input,
-  .lName-signUp input,
-  .username-signUp input,
-  .password-signUp input,
-  .username-login input,
-  .password-login input {
-    height: 55px;
-    width: 280px;
-  }
-  .form-btn {
-    width: 150px;
-    height: 40px;
-    font-size: 1.7rem;
-  }
-  .switch-brand {
-    font-size: 5rem;
-  }
-  .switch h5 {
-    padding: 2rem 5rem;
-  }
-  .switch button {
-    width: 130px;
-    height: 40px;
-  }
-}
 /********************** owner info style *************************/
+@media screen and (min-width: 1024px){
+  .switch-container{
+    display: inline;
+    width: 400px;
+    left: -.5%;
+    top: 55%;
+    color: #fff;
+  }
+}
 .OwnerInfo {
   position: absolute;
   bottom: 0%;

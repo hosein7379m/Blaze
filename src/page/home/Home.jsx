@@ -1,22 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
 import SideBar from "./SideBar";
-import Menu from "./Menu";
 import Header from "./Header";
 import StartedCourse from "./StartedCourse";
 import "./Home.css";
 import { AuthContext } from "../../Context/AuthContext";
-import axios from "axios";
 import AuthService from "../../Services/AuthService";
 
 const Home = () => {
   const { selectedCourses, courses } = useContext(AuthContext);
   /*  */
   const [sideStatus, setSideStatus] = useState(false);
-  const [menuStatus, setMenuStatus] = useState(false);
   const [serverCourse, setServerCourse] = useState([]);
   const [allCourse, setAllCourse] = useState([]);
   const [consoleCourse, setConsoleCourse] = useState([]);
   const [CustomCat, setCustomCat] = useState("All");
+  const [searchCourse, setSearchCourse] = useState("");
 
   const [userinfo, setUSerInfo] = useState({
     fName: "",
@@ -78,6 +76,9 @@ const Home = () => {
       });
     });
   };
+  const filterdBySearch = consoleCourse.filter((course) => {
+    return course.name.toLowerCase().includes(searchCourse);
+  });
 
   return (
     <div className="Home">
@@ -85,22 +86,25 @@ const Home = () => {
         <SideBar
           sideStatus={sideStatus}
           setSideStatus={setSideStatus}
-          menuStatus={menuStatus}
-          setMenuStatus={setMenuStatus}
           width={width}
+          firstName={userinfo.fName}
+          lastName={userinfo.lName.substring(0, 7)}
         />
         <div className={`main-content ${sideStatus ? "SideOpen" : null}`}>
           <Header
             sideStatus={sideStatus}
             setSideStatus={setSideStatus}
-            menuStatus={menuStatus}
-            setMenuStatus={setMenuStatus}
             CustomCat={CustomCat}
             setCustomCat={setCustomCat}
+            searchCourse={searchCourse}
+            setSearchCourse={setSearchCourse}
           />
           <section className="content-course">
-            {consoleCourse
+            {filterdBySearch
               .filter((couCat) => {
+                {
+                  /* category filter */
+                }
                 if (CustomCat === "All") {
                   return couCat;
                 } else if (CustomCat === "Favorite" && couCat.favorite) {
@@ -125,26 +129,6 @@ const Home = () => {
           </section>
         </div>
       </section>
-      <Menu
-        menuStatus={menuStatus}
-        setMenuStatus={setMenuStatus}
-        sideStatus={sideStatus}
-        setSideStatus={setSideStatus}
-        width={width}
-        firstName={userinfo.fName}
-        lastName={userinfo.lName.substring(0, 7)}
-      />
-      <span className="menu-handler">
-        <i
-          onClick={() => {
-            setMenuStatus(!menuStatus);
-            if (sideStatus) {
-              setSideStatus(false);
-            }
-          }}
-          className="uil uil-apps"
-        ></i>
-      </span>
     </div>
   );
 };

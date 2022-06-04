@@ -4,6 +4,8 @@ import AuthService from "../Services/AuthService";
 import { AuthContext } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import illus1 from "../image/illusBg1.svg";
+import illus2 from "../image/illusBg2.svg";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -27,6 +29,11 @@ const Register = () => {
     toast(
       (t) => (
         <span className="guid-content">
+          <h2>The best courses with Blaze</h2>
+          <p>
+            Get started using a courses to strengthen skills in the best
+            possible way, grow up with Blaze
+          </p>
           <h1>Guid</h1>
           <p>
             Blaze allows you to take the best training courses and strengthen
@@ -69,7 +76,8 @@ const Register = () => {
     });
   };
   /* switch function for handle conditional in login and signup form */
-  const changeRegister = () => {
+  const changeRegister = (e) => {
+    e.preventDefault();
     setIsSignUp(!isSignUp);
   };
   /* function for submit data for login and register */
@@ -110,19 +118,22 @@ const Register = () => {
   const loginUser = (e) => {
     e.preventDefault();
     if (login.username && login.password) {
-      AuthService.login(login).then((data) => {
-        const { isAuthenticated, user, message } = data;
-        if (isAuthenticated) {
-          toast.success(message);
-          authContext.setUser(user);
-          authContext.setIsAuthenticated(isAuthenticated);
-          setTimeout(() => {
-            navigate("/home");
-          }, 1500);
-        } else {
-          toast.success(message.msgBody);
-        }
-      });
+      AuthService.login(login)
+        .then((data) => {
+          const { isAuthenticated, user, message } = data;
+          console.log(message);
+          if (isAuthenticated) {
+            toast.success(message.msgBody);
+            authContext.setUser(user);
+            authContext.setIsAuthenticated(isAuthenticated);
+            setTimeout(() => {
+              navigate("/home");
+            }, 1500);
+          }
+        })
+        .catch(() => {
+          toast.error("Error has occured, try again later!");
+        });
     } else if (!login.username) {
       toast.error("you should enter your username");
     } else if (!login.password) {
@@ -142,14 +153,15 @@ const Register = () => {
           },
         }}
       />
+      <div className="top-illus">
+        <img src={illus1} alt="illus" />
+      </div>
       {/* form section */}
       <section className="form-container">
         {/* signup form */}
-
         <form className={`signup-form ${isSignUp ? "signupOff" : "signupOn"}`}>
           <h1 className="form-title">Sign Up</h1>
           <div className="input-field fName-signUp">
-            {/* <i className="fa-solid fa-user"></i> */}
             <input
               type="text"
               placeholder="First Name"
@@ -161,7 +173,6 @@ const Register = () => {
             />
           </div>
           <div className="input-field lName-signUp">
-            {/* <i className="fa-solid fa-user"></i> */}
             <input
               type="text"
               placeholder="Last Name"
@@ -209,9 +220,12 @@ const Register = () => {
             }}
           />
           <div className="signUp-way">
-            <p>{!isSignUp ? "Login with : " : "Sign up with : "}</p>
-            <i className="fa-brands fa-google-plus-g"></i>
-            <i className="fa-brands fa-github"></i>
+            <p className="switch-cta">
+              {isSignUp ? "Already have account?" : "Dont have account?"}
+            </p>
+            <button className="switch-btn" onClick={changeRegister}>
+              {isSignUp ? "Login" : "Sign Up"}
+            </button>
           </div>
         </form>
         {/* login form */}
@@ -248,23 +262,29 @@ const Register = () => {
           <hr
             style={{
               backgroundColor: "#5e81f4",
-              margin: ".5rem 0",
+              margin: ".9rem 0",
               width: "150px",
               height: ".5px",
             }}
           />
           <div className="signUp-way">
-            <p>{isSignUp ? "Login with " : "Sign up with "}</p>
-            <i className="fa-brands fa-google-plus-g"></i>
-            <i className="fa-brands fa-github"></i>
+            <p className="switch-cta">
+              {isSignUp ? "Already have account?" : "Dont have account?"}
+            </p>
+            <button className="switch-btn" onClick={changeRegister}>
+              {isSignUp ? "Login" : "Sign Up"}
+            </button>
           </div>
         </form>
       </section>
+      <div className="bottom-illus">
+        <img src={illus2} alt="illus" />
+      </div>
+      <span className="guid-container">
+        <i className="fa-regular fa-circle-question" onClick={handleGuid}></i>
+      </span>
       {/* switch section */}
       <section className="switch-container">
-        <span className="guid-container">
-          <i className="fa-regular fa-circle-question" onClick={handleGuid}></i>
-        </span>
         <div className="switch">
           <div className="switch-brand">
             <h1>
@@ -276,12 +296,6 @@ const Register = () => {
             Get started using a courses to strengthen skills in the best
             possible way, grow up with Blaze
           </h5>
-          <p className="switch-cta">
-            {isSignUp ? "Already have account?" : "Dont have account?"}
-          </p>
-          <button className="switch-btn" onClick={changeRegister}>
-            {isSignUp ? "Login" : "Sign Up"}
-          </button>
         </div>
       </section>
       {/* <OwnerInfo /> */}

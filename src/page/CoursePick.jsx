@@ -73,29 +73,33 @@ const CoursePick = () => {
     });
   };
   const handleGuid1 = () => {
-    toast(
-      (t) => (
-        <span className="guid-content">
-          <h1>Step-1</h1>
-          <p>
-            In this step you have to select the courses you want to take and add
-            them to your user panel.
-          </p>
-          <button
-            onClick={() => {
-              toast.dismiss(t.id);
-            }}
-          >
-            Ok
-          </button>
-        </span>
-      ),
-      {
-        style: {
-          padding: "0",
-        },
-      }
-    );
+    let onceOpen = false;
+    if (!onceOpen) {
+      onceOpen = true;
+      toast(
+        (t) => (
+          <span className="guid-content">
+            <h1>Step-1</h1>
+            <p>
+              In this step you have to select the courses you want to take and
+              add them to your user panel.
+            </p>
+            <button
+              onClick={() => {
+                toast.dismiss(t.id);
+              }}
+            >
+              Ok
+            </button>
+          </span>
+        ),
+        {
+          style: {
+            padding: "0",
+          },
+        }
+      );
+    }
   };
 
   return (

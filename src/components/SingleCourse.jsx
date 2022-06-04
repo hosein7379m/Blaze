@@ -52,7 +52,6 @@ const SingleCourse = ({
       favorite: false,
       complete: false,
     };
-    console.log(courseSelect);
     if (
       courseSelect.courseID &&
       courseSelect.username &&

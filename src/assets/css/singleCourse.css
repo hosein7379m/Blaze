@@ -3,6 +3,7 @@
   animation-name: singleCourseAnimate;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
+  
 }
 @keyframes singleCourseAnimate {
   from {
@@ -15,7 +16,7 @@
 .course-container {
   width: 100%;
   height: auto;
-  background-color: white;
+  background-image: linear-gradient(to bottom, #d8e3ff, #d8e3ff, #e5ecff, #e5ecff, #ffffff);
   border: 2px solid #5e81f4;
   border-radius: 8px;
   padding: 0.3rem;

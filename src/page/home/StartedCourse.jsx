@@ -26,9 +26,7 @@ const StartedCourse = ({
   /*  */
   const handleFavorite = (e) => {
     let currID = e.target.attributes[0].nodeValue;
-    axios.patch(
-      `https://serverblaze.herokuapp.com/usercourse/updatefavorite/${currID}`
-    );
+    axios.patch(`http://localhost:4000/usercourse/updatefavorite/${currID}`);
     checkFavorite();
 
     // setInitialFav(() => {
@@ -37,9 +35,7 @@ const StartedCourse = ({
   };
   const handleComplete = (e) => {
     let currID = e.target.attributes[0].nodeValue;
-    axios.patch(
-      `https://serverblaze.herokuapp.com/usercourse/updatecomplete/${currID}`
-    );
+    axios.patch(`http://localhost:4000/usercourse/updatecomplete/${currID}`);
     checkComplete();
   };
   useEffect(() => {
