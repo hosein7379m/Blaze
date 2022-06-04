@@ -101,13 +101,13 @@ const DetailCourse = () => {
           <button className="cta-back" onClick={handleBack}>
             BACK
           </button>
-          <button
+          {/* <button
             className="cta-add"
             onClick={handleAdd}
             name={currentDetail ? currentDetail.id : null}
           >
             ADD
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
